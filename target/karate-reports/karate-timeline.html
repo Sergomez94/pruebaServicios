@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"examples\/users\/createToken[1:7]","start":1697499304067,"end":1697499305823,"title":"examples\/users\/createToken[1:7] 18:35:04.067-18:35:05.823 Generar Token de Autenticación"},{"id":2,"group":1,"content":"examples\/users\/createToken[2:21]","start":1697499305840,"end":1697499306189,"title":"examples\/users\/createToken[2:21] 18:35:05.840-18:35:06.189 Crear book 1","className":"failed"},{"id":3,"group":1,"content":"examples\/users\/createToken[3:41]","start":1697499306212,"end":1697499306510,"title":"examples\/users\/createToken[3:41] 18:35:06.212-18:35:06.510 Crear book 2","className":"failed"},{"id":4,"group":1,"content":"examples\/users\/createToken[4:61]","start":1697499306527,"end":1697499306811,"title":"examples\/users\/createToken[4:61] 18:35:06.527-18:35:06.811 Consultar Reserva 1","className":"failed"},{"id":5,"group":1,"content":"examples\/users\/createToken[5:67]","start":1697499306831,"end":1697499307109,"title":"examples\/users\/createToken[5:67] 18:35:06.831-18:35:07.109 Consultar Reserva 2","className":"failed"},{"id":6,"group":1,"content":"examples\/users\/createToken[6:73]","start":1697499307125,"end":1697499307757,"title":"examples\/users\/createToken[6:73] 18:35:07.125-18:35:07.757 Actualizar book 1","className":"failed"},{"id":7,"group":1,"content":"examples\/users\/createToken[7:95]","start":1697499307774,"end":1697499308388,"title":"examples\/users\/createToken[7:95] 18:35:07.774-18:35:08.388 Actualizar book 2","className":"failed"},{"id":8,"group":1,"content":"examples\/users\/createToken[8:117]","start":1697499308405,"end":1697499308998,"title":"examples\/users\/createToken[8:117] 18:35:08.405-18:35:08.998 Eliminar Reserva 1"},{"id":9,"group":1,"content":"examples\/users\/createToken[9:124]","start":1697499309013,"end":1697499309586,"title":"examples\/users\/createToken[9:124] 18:35:09.013-18:35:09.586 Eliminar Reserva 2"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
